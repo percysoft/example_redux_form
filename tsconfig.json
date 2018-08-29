@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "outDir": "./public/",
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@app/*": ["*"]
+    },
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "transpileOnly": true,
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "my-tsconfig.json"
+      }
+    },
+  },
+  "exclude": ["node_modules", "**/*.spec.tsx"]
+}
