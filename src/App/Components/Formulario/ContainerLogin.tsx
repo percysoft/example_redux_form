@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Login } from './Login';
 import { connect } from 'react-redux';
-import { setForm } from './action';
+import { setForm } from '../../Actions/form';
 import { reduxForm, formValues } from 'redux-form';
 import { validationConfig, getFieldValidation } from '../../Utils/configValidation';
 import { schema } from '../Validator/form-schema';
@@ -24,7 +24,7 @@ export class ContainerLogin extends React.Component<IFormContainerProps, {}> {
 
   componentDidMount() {
     const datas = {
-      email:'percytataje@gmail.com',
+      email:'percytataje',
       password:'percy'
     }
     this.props.setFormData(datas);
@@ -50,7 +50,7 @@ export let FormCustomContainerConnect = reduxForm({
   form: 'login',
   fields,
   asyncValidate,
-  enableReinitialize: true
+  enableReinitialize: true,
 })(ContainerLogin);
 
 const mapStateToProps = ({ formData }) => ({ initialValues: formData });
@@ -61,5 +61,5 @@ const mapDispatchToProps = (dispatch: any) => ({
 
 FormCustomContainerConnect = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(FormCustomContainerConnect);

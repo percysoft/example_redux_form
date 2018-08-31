@@ -1,16 +1,14 @@
-import { createStore, applyMiddleware } from 'redux';
-import { reducer } from './reducer';
+import { createStore } from 'redux';
+import { reducers } from '../Reducers';
 
 const CONFIG_REDUX_EXTENSION = (
   window.devToolsExtension && window.devToolsExtension()
 );
 
-
 const initialState = {};
 
-
 export const store = createStore(
-  reducer,
+  reducers,
   initialState,
   CONFIG_REDUX_EXTENSION
 );

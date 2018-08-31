@@ -21,7 +21,7 @@ export const Login = (props:any) =>{
           </div>
           <div>
             <div>
-            <button type="submit">Enviar</button>
+            <button type="submit" >Enviar</button>
             </div>
           </div>
         </form>
