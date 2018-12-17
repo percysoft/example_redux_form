@@ -17,10 +17,11 @@ export const RenderField: React.SFC<IRenderFieldProps> = ({
   meta: {touched, error }
 }) => (
   <div>
+    {console.log(input, '<------holi')}
     <label>{label}</label>
     <div>
       <input {...input} type={type} />
-      {touched && error && <span>{error}</span>}
+      {touched && touched && <span>{error}</span>}
     </div>
   </div>
 );

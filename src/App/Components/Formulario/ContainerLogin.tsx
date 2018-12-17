@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Login } from './Login';
 import { connect } from 'react-redux';
 import { setForm } from '../../Actions/form';
-import { reduxForm, formValues } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { validationConfig, getFieldValidation } from '../../Utils/configValidation';
 import { schema } from '../Validator/form-schema';
 
@@ -35,14 +35,11 @@ export class ContainerLogin extends React.Component<IFormContainerProps, {}> {
   }
 
   render() {
-    console.log(this.props, '<-----------');
+    console.log(this.props, 'handleSubmit');
     return(
       <Login
         onSubmit={this.onSubmit}
-        handleSubmit={this.props.handleSubmit}
-        pristine={this.props.pristine}
-        reset={this.props.reset}
-        submitting={this.props.submitting}/>
+        handleSubmit={this.props.handleSubmit}/>
     );
   }
 }

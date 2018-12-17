@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { Field } from 'redux-form';
 import { RenderField } from '../RenderField';
 
 export const Login = (props:any) =>{
-  const { onSubmit, handleSubmit, pristine, reset, submitting } = props;
+  const { onSubmit, handleSubmit } = props;
+  console.log(props, '<<---- son las props');
     return(
       <React.Fragment>
         <form  onSubmit={handleSubmit(onSubmit)}>
