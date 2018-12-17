@@ -15,6 +15,7 @@ interface IFormContainerProps {
   reset: any;
   submitting: any;
   setFormData(values: object): void;
+  initialize: any;
 }
 
 export class ContainerLogin extends React.Component<IFormContainerProps, {}> {
@@ -27,7 +28,8 @@ export class ContainerLogin extends React.Component<IFormContainerProps, {}> {
       email:'percytataje',
       password:'percy'
     }
-    this.props.setFormData(datas);
+    // this.props.setFormData(datas);
+    this.props.initialize(datas);
   }
 
   onSubmit(values: any) {
@@ -47,7 +49,6 @@ export let FormCustomContainerConnect = reduxForm({
   form: 'login',
   fields,
   asyncValidate,
-  enableReinitialize: true,
 })(ContainerLogin);
 
 const mapStateToProps = ({ formData }) => ({ initialValues: formData });
